@@ -1,51 +1,11 @@
-interface Desarrollador {
-    nombre: string;
-    role: "backend" | "frontend" | "fullstack"
-    seniority: "junior" | "mid" | "senior"
-    tecnologias: string;
-    disponibilidad: boolean;
-}
-
-interface Repositorio {
-    nombre: string;
-    url: string;
-    ramaPrincipal: string;
-    lenguajePrincipal: string;
-}
-
-interface PullRequest {
-    id: number;
-    titulo: string;
-    estado: "abierto" | "aprobado" | "rechazado" | "mergeado";
-    autor: Desarrollador;
-    reviewers: Desarrollador[];
-    lineasCodigo: number;
-}
-
-interface Issue {
-    id: number;
-    titulo: string;
-    tipo: "bug" | "feature" | "mejora" | "documentacion";
-    prioridad: "baja" | "media" | "alta" | "critica";
-    estado: "completado" | "pendiente" | "en-progreso";
-    asignadoA: Desarrollador | null;
-}
-
-interface Proyecto {
-    nombre: string;
-    repositorio: Repositorio;
-    listaIssues: Issue[];
-    listasPR: PullRequest[];
-    equipoDesarrolladores: Desarrollador[];
-}
-
+import { Desarrollador, Repositorio, PullRequest, Issue, Proyecto } from "./types";
 // Crear desarrolladores 
 
 const Dev1: Desarrollador = {
     nombre: "Juan",
     role: "backend",
     seniority: "senior",
-    tecnologias: "Node.js, Express, MongoDB",
+    tecnologias: [["Nodejs", 10]],
     disponibilidad: true
 };
 
@@ -53,7 +13,7 @@ const Dev2: Desarrollador = {
     nombre: "Danna",
     role: "frontend",
     seniority: "mid",
-    tecnologias: "React, TypeScript, Tailwind CSS",
+    tecnologias: [["Angular", 5]],
     disponibilidad: true
 };
 
@@ -61,7 +21,7 @@ const Dev3: Desarrollador = {
     nombre: "Kevin",
     role: "fullstack",
     seniority: "junior",
-    tecnologias: "React, Node.js, MongoDB",
+    tecnologias: [["React", 5]],
     disponibilidad: true
 };
 
@@ -69,7 +29,7 @@ const Dev4: Desarrollador = {
     nombre: "Maria",
     role: "frontend",
     seniority: "senior",
-    tecnologias: "React, TypeScript, Tailwind CSS",
+    tecnologias: [["Vue", 5]],
     disponibilidad: true
 };
 
