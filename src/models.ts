@@ -7,9 +7,8 @@ export type IssueTip = "bug" | "feature" | "mejora" | "documentacion";
 // Tuple 
 export type Tecnologia = [string, number];
 
-
-
 export interface Desarrollador {
+    id: number;
     nombre: string;
     role: Role;
     seniority: Seniority;
